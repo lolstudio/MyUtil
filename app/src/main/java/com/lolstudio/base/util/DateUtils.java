@@ -31,6 +31,12 @@ public class DateUtils {
         Date date = new Date(Long.parseLong(millSec));
         return sdf.format(date);
     }
+    
+    public static Long transferStringDateToLong(String date) throws ParseException {
+        SimpleDateFormat sdf=DEFAULT_DATE_FORMAT;
+        Date dt = sdf.parse(date);
+        return dt.getTime();
+    }
 
     // 讲日期转为时间类型如"Dec 9,2014 8:03:28 AM"
     public static String transforCalender(String date) {
